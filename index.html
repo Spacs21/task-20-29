@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock and Tasks | Bekzod</title>
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+    <div class="container">
+        <video autoplay muted loop class="bg-video">
+            <source src="assets/summer-bg (1).mp4" type="video/mp4">
+          </video>
+          <div class="holder">
+              <div class="menu">
+                <div class="sections">
+                    <div class="img_effect"><a href="#" onclick="showDate()"><img src="assets/main menu.png" class="main-img"></a></div>
+                </div>
+              </div>
+              <div class="box" id="box">
+                  <h3 class="title">Bajarilgan: <span style="color: aqua;">7/10</span></h3>
+                  <h3 class="title">Qo'shimcha: <span style="color: aqua;">3</span></h3>
+                  <h3 class="title">Umumiy: <span style="color: aqua;">13</span></h3>
+                  <button onclick="showImg()">Codni Outputi!</button>
+                  <img src="assets/output.png" id="output" onclick="closeImg()">
+                  </div>
+              </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

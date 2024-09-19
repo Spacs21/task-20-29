@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+body{
+    font-family: 'Poppins', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    color: white;
+    background: rgba(51, 51, 51, 0.4);
+    width: 100%;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    width: 80vw; 
+    height: 50vh;
+    max-width: 500px;
+    max-height: 300px;
+    border-radius: 20px;
+    animation: textAppear 1s 0.5s forwards;
+    box-shadow: 
+        0 0 10px rgba(0, 255, 0, 0.4),
+        0 0 20px rgba(0, 255, 0, 0.3),
+        0 0 30px rgba(0, 255, 0, 0.2),
+        0 0 10px rgba(255, 0, 255, 0.4),
+        0 0 20px rgba(255, 0, 255, 0.3),
+        inset 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: scale(0.8);
+    h2{
+        font-size: 25px;
+    }
+    .date{
+        display: none;
+        transition: 0.5s ease;
+    }
+    .day{
+        display: none;
+        transition: 0.5s ease;
+    }
+    .back{
+        display: none;
+        transition: 0.5s ease;
+    }
+    .hider{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .hider_news {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        height: 250px;    
+        h2 {
+            color: #6e65f0;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+    
+        h3 {
+            color: #00ff00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+    
+        p {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+    }
+    
+    .music{
+        box-shadow: none;
+        width: 40px;
+        position: fixed;
+        top: 0;
+        right: 10px;
+        cursor: pointer;
+        &:hover {
+            transform: translateY(-2px);
+        }
+    
+        &:active {
+            opacity: 0.7;
+            transform: translateY(2px);
+        }
+    }
+    #pause{
+        display: block;
+    }
+    #play{
+        display: none;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.box h1, .box p {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: textAppear 1s 0.5s forwards;
+}
+
+@keyframes textAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.box img {
+    width: 0;
+    position: fixed;
+    opacity: 0.9;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: 0.5s ease;
+    box-shadow: 
+        0 0 10px rgba(255, 0, 255, 0.4),
+        0 0 20px rgba(255, 0, 255, 0.3),
+        inset 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+button {
+    padding: 6px 20px;
+    background-color: rgb(85, 38, 196);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-left: 8px;
+    margin-top: 5px;
+
+    &:hover {
+        background-color: rgb(178, 96, 255);
+        cursor: pointer;
+        transform: translateY(-3px);
+    }
+
+    &:active {
+        background-color: rgb(178, 96, 255);
+        cursor: pointer;
+        opacity: 0.7;
+        transform: translateY(5px);
+    }
+}
+
+.btn {
+    display: flex;
+}
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.status h2 {
+    font-size: 17px;
+    margin-top: 5px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.holder {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    animation: textAppear 1s 0.5s forwards;
+    justify-content: space-between;
+    .news {
+        display: inline-block;
+        padding: 5px 10px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        background: linear-gradient(135deg, #6bffeb, #6e65f0);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-bottom: 5px;
+      }
+      
+      .news:hover {
+        background: linear-gradient(135deg, #6bffeb, #70ff6b);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+      .news:active {
+        background: linear-gradient(135deg, #ff6b6b, #f06595);
+        transform: translateY(2px);
+      }
+    .sections{
+        display: flex;
+        align-items: center;
+    }
+    box-shadow: 
+        0 0 10px rgba(0, 217, 255, 0.2),
+        0 0 20px rgba(0, 183, 255, 0.2),
+        0 0 30px rgba(0, 238, 255, 0.2),
+        0 0 10px rgba(128, 0, 128, 0.2),
+        0 0 20px rgba(128, 0, 128, 0.2),
+        inset 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.main-img, .js-img, .img_effect {
+    transition: 0.3s ease;
+}
+
+.main-img {
+    width: 40px;
+
+}
+
+.js-img {
+    width: 45px;
+    padding-bottom: 5px;
+}
+
+.img_effect {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    border-radius: 5px;
+
+    &:hover {
+        box-shadow: 
+            0 0 10px rgba(0, 255, 0, 0.4),
+            0 0 20px rgba(0, 255, 0, 0.3),
+            0 0 30px rgba(4, 0, 255, 0.2),
+            0 0 10px rgba(255, 0, 255, 0.4),
+            0 0 20px rgba(255, 0, 255, 0.3),
+            inset 0 0 15px rgba(0, 0, 0, 0.6);
+    }
+}
+
